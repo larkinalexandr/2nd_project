@@ -10,10 +10,12 @@ $color-transparent:                 rgba(255, 255, 255, 0);
 // Typography
 // ---------------------------------
 
+$pt-mono-font:                      "PT Mono", "Arial", sans-serif;
+$roboto-condensed-font:             "Roboto Condensed", "Arial", sans-serif;
+$roboto-font:                       "Roboto", "Arial", sans-serif;
+
 // переменная используемая в html для подключения скейлинга
 $fs-default:                        16px;
-
-$ff-placeholder:                    "PT Mono", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------
