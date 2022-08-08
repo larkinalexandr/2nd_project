@@ -1,0 +1,159 @@
+.header {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  min-height: 120px;
+  background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+
+  @include vp-1023 {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 70px;
+    min-height: 100px;
+  }
+
+  @include vp-767 {
+    padding: 10px 35px 20px 26px;
+    min-height: 70px;
+  }
+}
+
+.header__container {
+  @include container;
+  padding-right: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include vp-1023 {
+    padding-right: 0;
+    align-items: flex-start;
+  }
+}
+
+.header__logo {
+  flex-shrink: 0;
+
+  @media (min-width: 1024px) and (max-width: 1240px) {
+    margin-left: 20px;
+  }
+
+  img {
+    width: 215px;
+    height: 55px;
+  }
+
+  @include vp-767 {
+    margin-top: 5px;
+
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+.header__contacts-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    margin-bottom: 5px;
+    font-family: $pt-mono-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #f2f5f7;
+    cursor: pointer;
+    margin-right: 120px;
+    transition: transform 0.2s;
+    fill: #00b2ff;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &:focus-visible {
+      transform: $icon-hover;
+      transition: transform 0.5s;
+    }
+
+    &:active {
+
+      color: #00b2ff;
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+  }
+
+  @include vp-1023 {
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 40px;
+      min-height: 40px;
+      margin-bottom: 0;
+      margin-right: 0;
+      margin-left: 20px;
+    }
+
+    span {
+      display: none;
+    }
+
+    svg {
+      margin-right: 0;
+    }
+  }
+}
+
+.header__email {
+  display: flex;
+}
+
+.header__phone {
+  display: flex;
+}
+
+.header__order-call {
+  display: flex;
+  min-width: 160px;
+  min-height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4px;
+  margin-right: 2px;
+  margin-bottom: 6px;
+  margin-left: 5px;
+  font-family: $roboto-condensed-font;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #f2f5f7;
+  letter-spacing: 0.05em;
+  border: 1px solid #f2f5f6;
+  border-radius: 3px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  user-select: none;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-default-white;
+    color: $color-default-black;
+  }
+
+  &:active {
+    background-color: #00b2ff;
+    color: #ffffff;
+  }
+
+  @include vp-1023 {
+    display: none;
+  }
+}

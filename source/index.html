@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      /* По умолчанию показывается мобильный макет */
+      background-image: url("./pixel-glass/mobile.png");
+    }
+
+    /* Планшет */
+    @media ( min-width: 768px ) {
+      HTML {
+        /* Планшетный макет */
+        background-image: url("./pixel-glass/tablet.png");
+      }
+    }
+
+    /* Десктоп */
+    @media ( min-width: 1024px ) {
+      HTML {
+        /* Десктопный макет */
+        background-image: url("./pixel-glass/desktop.png");
+      }
+    }
+  </style>
+  <link href="./pixel-glass/styles.css" rel="stylesheet">
+  <script src="./pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
+
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,8 +40,30 @@
 </head>
 <body>
 <div class="wrapper">
-  <header>
-    <div class="container"></div>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">
+        <picture>
+          <source media="(min-width: 768px" srcset="img/svg/logo-full.svg">
+          <img src="img/svg/logo-mobile.svg" width="35" height="35" alt="Логотип компании.">
+        </picture>
+      </div>
+      <div class="header__contacts-wrapper">
+        <a class="header__email" href="mailto:info@sd.ru">
+          <svg class="header__email-icon" width="20" height="20">
+            <use xlink:href="img/sprite_auto.svg#email-icon"></use>
+          </svg>
+          <span>info@sd.ru</span>
+        </a>
+        <a class="header__phone" href="tel:+74950005252">
+          <svg class="header__phone-icon" width="20" height="20">
+            <use xlink:href="img/sprite_auto.svg#phone-icon"></use>
+          </svg>
+          <span>+7 (495) 000 52 52</span>
+        </a>
+      </div>
+      <a class="header__order-call" href="#">Заказать звонок</a>
+    </div>
   </header>
   <main>
     <div class="greeting">
