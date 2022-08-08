@@ -1,0 +1,156 @@
+.footer {
+  min-height: 280px;
+  background-color: #041827;
+  padding: 50px 0 50px;
+
+  h3 {
+    margin-top: 7px;
+    margin-bottom: 23px;
+    font-family: $roboto-condensed-font;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  a,
+  address {
+    font-family: $pt-mono-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.7);;
+  }
+}
+
+.footer__container {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__socials {
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: auto;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 40px);
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    cursor: pointer;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    outline: 1px solid white;
+    outline-offset: -1px;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+
+
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+
+
+    outline: 1px solid green;
+    outline-offset: -1px;
+  }
+
+  a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.footer_nav {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: 30px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+    width: 470px;
+    column-gap: 30px;
+    row-gap: 9px;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      align-items: flex-start;
+    }
+
+    &:nth-child(-n+4) {
+      grid-column: 1 / 2;
+    }
+
+    &:nth-child(n+5):nth-child(-n+8) {
+      grid-column: 2 / 3;
+    }
+
+    &:nth-child(n+9):nth-child(odd) {
+      grid-column: 1 / 2;
+    }
+
+    &:nth-child(n+9):nth-child(even) {
+      grid-column: 2 / 3;
+    }
+  }
+}
+
+.footer__office {
+  display: flex;
+  flex-direction: column;
+  width: 345px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 0;
+    margin: 0 0 6px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+div {
+  outline: 1px solid red;
+  outline-offset: -1px;
