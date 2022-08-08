@@ -14,12 +14,15 @@ $pt-mono-font:                      "PT Mono", "Arial", sans-serif;
 $roboto-condensed-font:             "Roboto Condensed", "Arial", sans-serif;
 $roboto-font:                       "Roboto", "Arial", sans-serif;
 
+// ---------------------------------
+$text-active-color:                  #00b2ff;
+
 // переменная используемая в html для подключения скейлинга
 $fs-default:                        16px;
 
 // Animation
 // ---------------------------------
-
+$icon-hover:                        scale(1.2);
 $tf-default:                        ease;
 $trans-default:                     0.3s $tf-default;
 
