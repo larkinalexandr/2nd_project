@@ -12,47 +12,46 @@ window.addEventListener('DOMContentLoaded', () => {
       footerAccordion[i].classList.remove('is-opened');
       footerAccordion[i].classList.add('is-closed');
     }
-
-    const openAccordion = (element) => {
-      element.classList.remove('is-closed');
-      element.classList.add('is-opened');
-    };
-
-    if (footerAccordion.length > 0) {
-      for (let i = 0; i < footerAccordion.length; i++) {
-        footerAccordion[i].classList.remove('no-js');
-        footerAccordion[i].classList.add('is-closed');
-        footerAccordion[i].addEventListener('click', (evt) => {
-
-          if (evt.target.tagName === 'H3') {
-            if (evt.target.parentNode.classList.contains('is-closed')) {
-              closeAll();
-              openAccordion(evt.target.parentNode);
-
-            } else {
-              closeAll();
-            }
-          }
-        });
-      }
-    }
-    // ---------------------------------
-    // Utils
-    // ---------------------------------
-
-    iosVhFix();
-
-    // Modules
-    // ---------------------------------
-
-    // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
-    // в load следует добавить скрипты, не участвующие в работе первого экрана
-    window.addEventListener('load', () => {
-      initModals();
-    });
   };
-)
-  ;
+
+  const openAccordion = (element) => {
+    element.classList.remove('is-closed');
+    element.classList.add('is-opened');
+  };
+
+  if (footerAccordion.length > 0) {
+    for (let i = 0; i < footerAccordion.length; i++) {
+      footerAccordion[i].classList.remove('no-js');
+      footerAccordion[i].classList.add('is-closed');
+      footerAccordion[i].addEventListener('click', (evt) => {
+
+        if (evt.target.tagName === 'H3') {
+          if (evt.target.parentNode.classList.contains('is-closed')) {
+            closeAll();
+            openAccordion(evt.target.parentNode);
+
+          } else {
+            closeAll();
+          }
+        }
+      });
+    }
+  }
+  // ---------------------------------
+  // Utils
+  // ---------------------------------
+
+  iosVhFix();
+
+  // Modules
+  // ---------------------------------
+
+  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
+  // в load следует добавить скрипты, не участвующие в работе первого экрана
+  window.addEventListener('load', () => {
+    initModals();
+  });
+});
 
 // ---------------------------------
 
