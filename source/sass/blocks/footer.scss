@@ -24,18 +24,46 @@
     font-style: normal;
     color: rgba(255, 255, 255, 0.7);;
   }
+
+  @include vp-1023 {
+    padding-left: 50px;
+    padding-right: 45px;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
 }
 
 .footer__container {
   @include container;
   display: flex;
   justify-content: space-between;
+
+  @include vp-1023 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 37px;
+  }
+}
+
+.footer__logo-socials-wrapper {
+  @include vp-1023 {
+    display: flex;
+    justify-content: space-between;
+    grid-column: span 2;
+  }
+
+
+  outline: 1px solid green;
+  outline-offset: -1px;
 }
 
 .footer__socials {
   margin-top: 30px;
   margin-left: 10px;
-  margin-right: auto;
+  //margin-right: auto;
 
   ul {
     display: grid;
@@ -61,9 +89,6 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-
-
-
   }
 
   svg {
@@ -79,6 +104,16 @@
     width: 40px;
     height: 40px;
   }
+
+  @include vp-1023 {
+    margin-top: 5px;
+    margin-left: 0;
+
+    ul {
+      grid-template-columns: repeat(3, 40px);
+    }
+  }
+
 }
 
 .footer_nav {
@@ -127,12 +162,24 @@
       grid-column: 2 / 3;
     }
   }
+
+  @include vp-1023 {
+    margin: 0;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      padding-right: 75px;
+    }
+  }
 }
 
 .footer__office {
   display: flex;
   flex-direction: column;
   width: 345px;
+  padding-right: 10px;
 
   ul {
     display: flex;
@@ -144,13 +191,23 @@
   li {
     padding: 0;
     margin: 0 0 6px 0;
+
     &:last-child {
       margin-bottom: 0;
     }
   }
-}
 
+  @include vp-1023 {
+    width: auto;
+    padding: 0;
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
 
 div {
   outline: 1px solid red;
   outline-offset: -1px;
+}
