@@ -63,6 +63,17 @@
     letter-spacing: 0.05em;
     background-color: #00b2ff;
     text-transform: uppercase;
+
+    &:hover,
+    &:focus-visible {
+      background-color: #f2f5f7;
+      color: #00b2ff;
+    }
+
+    &:active {
+      background-color: #027fb6;
+      color: #f2f5f7;
+    }
   }
 
   @include vp-1023 {
