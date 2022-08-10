@@ -1,0 +1,85 @@
+.advantages__container {
+  @include container;
+  padding: 120px 0 190px;
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 32px;
+    row-gap: 30px;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    margin: 0;
+    min-height: 300px;
+    list-style-type: none;
+    border: 1px solid #ebebeb;
+    border-left: 5px solid #00b2ff;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: #00b2ff;
+
+      svg {
+        fill: #f2f5f7;
+      }
+
+      h3 {
+        color: #f2f5f7;
+      }
+
+      p {
+        color: #f2f5f7;
+      }
+    }
+  }
+
+  h3 {
+    margin: 0 0 13px;
+    font-family: $roboto-condensed-font;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+    color: #00b2ff;
+  }
+
+  p {
+    margin: 0;
+    font-family: $pt-mono-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #041827;
+  }
+
+  svg {
+    margin-bottom: 21px;
+    width: 35px;
+    height: 35px;
+    fill: #00b2ff;
+  }
+
+  @include vp-767 {
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+}
+
+.advantages__icon {
+  &--detective {
+    margin-left: -5px;
+  }
+}
