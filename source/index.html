@@ -3,32 +3,32 @@
 <head>
 
   <!-- Pixel Glass -->
-  <style>
-    HTML {
-      background-repeat: no-repeat;
-      background-position: 50% 0;
-      /* По умолчанию показывается мобильный макет */
-      background-image: url("./pixel-glass/mobile.png");
-    }
+  <!--  <style>-->
+  <!--    HTML {-->
+  <!--      background-repeat: no-repeat;-->
+  <!--      background-position: 50% 0;-->
+  <!--      /* По умолчанию показывается мобильный макет */-->
+  <!--      background-image: url("./pixel-glass/mobile.png");-->
+  <!--    }-->
 
-    /* Планшет */
-    @media ( min-width: 768px ) {
-      HTML {
-        /* Планшетный макет */
-        background-image: url("./pixel-glass/tablet.png");
-      }
-    }
+  <!--    /* Планшет */-->
+  <!--    @media ( min-width: 768px ) {-->
+  <!--      HTML {-->
+  <!--        /* Планшетный макет */-->
+  <!--        background-image: url("./pixel-glass/tablet.png");-->
+  <!--      }-->
+  <!--    }-->
 
-    /* Десктоп */
-    @media ( min-width: 1024px ) {
-      HTML {
-        /* Десктопный макет */
-        background-image: url("./pixel-glass/desktop.png");
-      }
-    }
-  </style>
-  <link href="./pixel-glass/styles.css" rel="stylesheet">
-  <script src="./pixel-glass/script.js"></script>
+  <!--    /* Десктоп */-->
+  <!--    @media ( min-width: 1024px ) {-->
+  <!--      HTML {-->
+  <!--        /* Десктопный макет */-->
+  <!--        background-image: url("./pixel-glass/desktop.png");-->
+  <!--      }-->
+  <!--    }-->
+  <!--  </style>-->
+  <!--  <link href="./pixel-glass/styles.css" rel="stylesheet">-->
+  <!--  <script src="./pixel-glass/script.js"></script>-->
   <!-- // Pixel Glass -->
 
   <meta charset="UTF-8"/>
@@ -82,8 +82,82 @@
       <div class="container"></div>
     </div>
   </main>
-  <footer>
-    <div class="container"></div>
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__logo-socials-wrapper">
+        <div class="footer__logo">
+          <img src="img/svg/logo-full.svg" width="215" height="55" alt="Логотип компании.">
+        </div>
+        <div class="footer__socials">
+          <ul>
+            <li>
+              <a href="#">
+                <svg width="30" height="30">
+                  <use xlink:href="img/sprite_auto.svg#pinterest-icon"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg width="30" height="30">
+                  <use xlink:href="img/sprite_auto.svg#ok-icon"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg width="30" height="30">
+                  <use xlink:href="img/sprite_auto.svg#vk-icon"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__nav footer__accordion no-js">
+        <h3>Разделы сайта</h3>
+        <ul>
+          <li>
+            <a href="#">О Компаниии</a>
+          </li>
+          <li>
+            <a href="#">Продукты</a>
+          </li>
+          <li>
+            <a href="#">Производство печатных плат</a>
+          </li>
+          <li>
+            <a href="#">Монтаж печатных плат</a>
+          </li>
+          <li>
+            <a href="#">Комплектующие</a>
+          </li>
+          <li>
+            <a href="#">Доставка</a>
+          </li>
+          <li>
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__office footer__accordion no-js">
+        <h3>Наш офис</h3>
+        <ul>
+          <li>
+            <address>г. Мытищи, Олимпийский&nbsp;проспект, д.10</address>
+          </li>
+          <li>
+            <a href="tel:+74955894050">+7 (495) 589-40-50</a>
+          </li>
+          <li>
+            <a href="tel:+79253895829">+7 (925) 389-58-29</a>
+          </li>
+          <li>
+            <a href="tel:+79253647813">+7 (925) 364-78-13</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </footer>
 </div>
 
