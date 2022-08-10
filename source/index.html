@@ -2,34 +2,34 @@
 <html lang="ru">
 <head>
 
-  <!-- Pixel Glass -->
-  <!--  <style>-->
-  <!--    HTML {-->
-  <!--      background-repeat: no-repeat;-->
-  <!--      background-position: 50% 0;-->
-  <!--      /* По умолчанию показывается мобильный макет */-->
-  <!--      background-image: url("./pixel-glass/mobile.png");-->
-  <!--    }-->
+<!--   Pixel Glass-->
+    <style>
+      HTML {
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        /* По умолчанию показывается мобильный макет */
+        background-image: url("./pixel-glass/mobile.png");
+      }
 
-  <!--    /* Планшет */-->
-  <!--    @media ( min-width: 768px ) {-->
-  <!--      HTML {-->
-  <!--        /* Планшетный макет */-->
-  <!--        background-image: url("./pixel-glass/tablet.png");-->
-  <!--      }-->
-  <!--    }-->
+      /* Планшет */
+      @media ( min-width: 768px ) {
+        HTML {
+          /* Планшетный макет */
+          background-image: url("./pixel-glass/tablet.png");
+        }
+      }
 
-  <!--    /* Десктоп */-->
-  <!--    @media ( min-width: 1024px ) {-->
-  <!--      HTML {-->
-  <!--        /* Десктопный макет */-->
-  <!--        background-image: url("./pixel-glass/desktop.png");-->
-  <!--      }-->
-  <!--    }-->
-  <!--  </style>-->
-  <!--  <link href="./pixel-glass/styles.css" rel="stylesheet">-->
-  <!--  <script src="./pixel-glass/script.js"></script>-->
-  <!-- // Pixel Glass -->
+      /* Десктоп */
+      @media ( min-width: 1024px ) {
+        HTML {
+          /* Десктопный макет */
+          background-image: url("./pixel-glass/desktop.png");
+        }
+      }
+    </style>
+    <link href="./pixel-glass/styles.css" rel="stylesheet">
+    <script src="./pixel-glass/script.js"></script>
+<!--    Pixel Glass-->
 
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -66,9 +66,13 @@
     </div>
   </header>
   <main>
-    <div class="greeting">
-      <div class="container"></div>
-    </div>
+    <section class="intro">
+      <div class="intro__container">
+        <h1>Печатные платы</h1>
+        <p>производство и монтаж, поставка комплектующих, блоков&nbsp;и&nbsp;модулей</p>
+        <a href="#ask"><span class="intro__text-link intro__text-link--desktop">Получить бесплатную консультацию</span><span class="intro__text-link intro__text-link--mobile">Бесплатная консультация</span></a>
+      </div>
+    </section>
     <div class="advantages">
       <div class="container"></div>
     </div>
@@ -78,10 +82,8 @@
     <div class="services">
       <div class="container"></div>
     </div>
-    <div class="ask">
+    <div class="ask" id="ask">
       <div class="container"></div>
-    </div>
-  </main>
   <footer class="footer">
     <div class="footer__container">
       <div class="footer__logo-socials-wrapper">
@@ -160,6 +162,8 @@
     </div>
   </footer>
 </div>
+</div>
+</main>
 
 <!-- Модалки -->
 

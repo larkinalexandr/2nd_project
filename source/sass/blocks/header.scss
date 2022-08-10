@@ -1,10 +1,13 @@
 .header {
+  position: fixed;
+  width: 100%;
   padding-top: 30px;
   padding-bottom: 20px;
   min-height: 120px;
   background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
 
   @include vp-1023 {
+    position: absolute;
     padding-top: 20px;
     padding-left: 50px;
     padding-right: 70px;
