@@ -34,6 +34,10 @@
       margin-top: 0;
     }
   }
+
+  @include vp-767 {
+    padding: 35px 0 0;
+  }
 }
 
 .footer__container {
@@ -51,6 +55,7 @@
   @include vp-767 {
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 }
 
@@ -64,6 +69,13 @@
   @include vp-767 {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+.footer__logo {
+  @include vp-767 {
+    margin-right: 5px;
+    margin-bottom: 10px;
   }
 }
 
@@ -129,6 +141,8 @@
     ul {
       display: flex;
       flex-wrap: wrap;
+      margin-left: 3px;
+      margin-bottom: 24px;
     }
   }
 }
@@ -200,7 +214,7 @@
       display: flex;
       flex-direction: column;
       width: auto;
-      padding-right: 75px;
+      padding-right: 80px;
     }
   }
 }
@@ -209,7 +223,7 @@
   @include vp-767 {
     h3 {
       position: relative;
-      padding: 20px;
+      padding: 22px 50px 21px 25px;
       margin: 0;
       border-top: 1px solid rgba(248, 253, 255, 0.7);
       cursor: pointer;
@@ -217,8 +231,8 @@
       &::before {
         content: "";
         position: absolute;
-        top: 50%;
-        right: 20px;
+        top: 46%;
+        right: 26px;
         display: block;
         height: 1px;
         width: 15px;
@@ -228,9 +242,9 @@
       &::after {
         content: "";
         position: absolute;
-        top: 50%;
+        top: 47%;
         transform: translate(0, -50%);
-        right: 27px;
+        right: 33px;
         display: block;
         height: 15px;
         width: 1px;
