@@ -5,6 +5,14 @@
   column-gap: 84px;
   padding-top: 71px;
   padding-left: 16px;
+
+  @include vp-1023 {
+    padding-top: 36px;
+    padding-left: 63px;
+    padding-right: 50px;
+    column-gap: 12px;
+  }
+
 }
 
 .about__year {
@@ -25,9 +33,17 @@
   background-color: #00b35d;
 
   @include retina {
-    background-image: url("/img/year-bg@2x.jpg");
     background-size: 391%;
-    background-position: -180px -35px;
+    background-image: url("/img/year-bg@2x.jpg");
+
+    @media (min-width: 1024px) {
+      background-position: -180px -35px;
+    }
+  }
+
+  @include vp-1023 {
+    margin-top: 7px;
+    background-position: -179px 44px;
   }
 }
 
@@ -36,17 +52,21 @@
   color: #041827;
 
   h2 {
-    margin: 0 0 11px;
+    margin: 0;
     font-family: $roboto-condensed-font;
     font-size: 36px;
     line-height: 51px;
   }
 
   p {
-    margin: 0 0 20px;
+    margin: 20px 0 0;
     font-family: $pt-mono-font;
     font-size: 16px;
     line-height: 22px;
+
+    &:first-of-type {
+      margin-top: 11px;
+    }
   }
 
   button {
@@ -78,6 +98,12 @@
     &:active {
       background-color: #057daf;
       border-color: #057daf;
+    }
+  }
+
+  @include vp-1023 {
+    button {
+      margin-top: 15px;
     }
   }
 
