@@ -38,6 +38,34 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
   // ---------------------------------
+
+  // about - readmore button
+
+  const aboutTextWrapper = document.querySelector('.about__text-wrapper');
+  const aboutParagraph = aboutTextWrapper.querySelectorAll('p');
+
+  if (aboutParagraph.length > 2) {
+    const button = document.createElement('button');
+    button.textContent = 'Подробнее';
+    button.type = 'button';
+    aboutTextWrapper.appendChild(button);
+    aboutTextWrapper.classList.add('is-closed');
+
+    button.addEventListener('click', () => {
+      if (aboutTextWrapper.classList.contains('is-closed')) {
+        aboutTextWrapper.classList.remove('is-closed');
+        aboutTextWrapper.classList.add('is-opened');
+        button.textContent = 'Скрыть';
+      } else {
+        aboutTextWrapper.classList.remove('is-opened');
+        aboutTextWrapper.classList.add('is-closed');
+        button.textContent = 'Подробнее';
+      }
+    });
+  }
+
+
+  // ---------------------------------
   // Utils
   // ---------------------------------
 
