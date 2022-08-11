@@ -5,6 +5,7 @@
   padding-bottom: 20px;
   min-height: 120px;
   background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+  z-index: 1;
 
   @include vp-1023 {
     position: absolute;
