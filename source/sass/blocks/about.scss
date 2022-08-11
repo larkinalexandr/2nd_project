@@ -8,9 +8,7 @@
   padding-left: 16px;
 
   @include vp-1023 {
-    padding-top: 36px;
-    padding-left: 63px;
-    padding-right: 50px;
+    padding: 36px 50px 60px 63px;
     column-gap: 12px;
   }
 
