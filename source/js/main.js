@@ -63,145 +63,56 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-
   // ---------------------------------
-  //
-  // //  Phone mask
-  //
-  // const input = document.querySelector('.tel');
-  // const button = document.querySelector('.send-button');
-  //
 
-  //
 
-  //
-  // button.addEventListener('click', (evt) => {
-  //   if (input.value.length < 18) {
-  //     evt.preventDefault();
-  //   }
-  // });
-  //
-  // input.addEventListener('input', (e) => {
-  //   const value = input.value.replace(/\D+/g, '');
-  //   e.preventDefault();
-  //
-  //   let result = '+';
-  //
-  //   const insertPrefix = function () {
-  //     result += '7 (';
-  //   };
-  //
-  //   const insertSkobka = function () {
-  //     result += ') ';
-  //   };
-  //
-  //   for (let i = 0; i < value.length && i < 11; i++) {
-  //     switch (i) {
-  //       case 0:
-  //         insertPrefix();
-  //         continue;
-  //       case 4:
-  //         insertSkobka();
-  //         break;
-  //       case 7:
-  //         result += ' ';
-  //         break;
-  //       case 9:
-  //         result += ' ';
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  //     result += value[i];
-  //   }
-  //
-  //   input.value = result;
-  // });
-  //
-  // //  --------------------------------
+  //  Phone input mask
 
-    // [].forEach.call( document.querySelectorAll('.tel'), function(input) {
-    //   var keyCode;
-    //   function mask(event) {
-    //     event.keyCode && (keyCode = event.keyCode);
-    //     var pos = this.selectionStart;
-    //     if (pos < 3) event.preventDefault();
-    //     var matrix = "+7 (___) ___ __ __",
-    //       i = 0,
-    //       def = matrix.replace(/\D/g, ""),
-    //       val = this.value.replace(/\D/g, ""),
-    //       new_value = matrix.replace(/[_\d]/g, function(a) {
-    //         return i < val.length ? val.charAt(i++) || def.charAt(i) : a
-    //       });
-    //     i = new_value.indexOf("_");
-    //     if (i != -1) {
-    //       i < 4 && (i = 3);
-    //       new_value = new_value.slice(0, i)
-    //     }
-    //     var reg = matrix.substr(0, this.value.length).replace(/_+/g,
-    //       function(a) {
-    //         return "\\d{1," + a.length + "}"
-    //       }).replace(/[+()]/g, "\\$&");
-    //     reg = new RegExp("^" + reg + "$");
-    //     if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
-    //     if (event.type == "blur" && this.value.length < 5)  this.value = ""
-    //   }
-    //
-    //   input.addEventListener("input", mask, false);
-    //   input.addEventListener("focus", mask, false);
-    //   input.addEventListener("blur", mask, false);
-    //   input.addEventListener("keydown", mask, false)
-    //
-    // });
+  [].forEach.call(document.querySelectorAll('.tel'), function (input) {
 
-  const input = document.querySelector('.tel');
+    const MAX_NUMBER_LENGTH = 11;
+    const prefixNumber = () => '+7 (';
 
-  const prefixNumber = () => '+7 (';
-
-// ======================================
-  input.addEventListener('focus', () => {
-    console.log(input.value.length)
-    if (input.value.length < 4) {
-      input.value = '+7 (';
-    }
-  });
-
-  input.addEventListener('blur', () => {
-    if (input.value.length < 5) {
-      input.value = '';
-    }
-  });
-
-  input.addEventListener("input", (e) => {
-    const value = input.value.replace(/\D+/g, "");
-    const numberLength = 11;
-
-    let number = '';
-
-    for (let i = 0; i < value.length && i < numberLength; i++) {
-      switch (i) {
-        case 0:
-          number += prefixNumber();
-          continue;
-        case 4:
-          number += ') ';
-          break;
-        case 7:
-          number += ' ';
-          break;
-        case 9:
-          number += ' ';
-          break;
-        default:
-          break;
+    input.addEventListener('focus', () => {
+      if (input.value.length < 4) {
+        input.value = prefixNumber();
       }
-      number += value[i];
-    }
-    //
-    input.value = number;
-  });
+    });
 
+    input.addEventListener('blur', () => {
+      if (input.value.length < 5) {
+        input.value = '';
+      }
+    });
+
+    input.addEventListener('input', () => {
+      const value = input.value.replace(/\D+/g, '');
+
+      let number = '';
+
+      for (let i = 0; i < value.length && i < MAX_NUMBER_LENGTH; i++) {
+        switch (i) {
+          case 0:
+            number += prefixNumber();
+            continue;
+          case 4:
+            number += ') ';
+            break;
+          case 7:
+            number += ' ';
+            break;
+          case 9:
+            number += ' ';
+            break;
+          default:
+            break;
+        }
+        number += value[i];
+      }
+      input.value = number;
+    });
+  });
+  // ---------------------------------
 
   // Utils
   // ---------------------------------
