@@ -275,6 +275,13 @@
   }
 }
 
+.ask__agree-wrapper input:hover + span,
+.ask__agree-wrapper input:focus-visible + span {
+  border-color: #8505af;
+  color: #8505af;
+}
+
 .ask__agree-wrapper input:checked + span::before {
   display: block;
 }
+
