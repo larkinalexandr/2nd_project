@@ -113,8 +113,25 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
   // ---------------------------------
-
   // Utils
+  if (window.localStorage) {
+    const elements = document.querySelectorAll('[name]');
+    if (window.localStorage.phone.length < 5) {
+      window.localStorage.phone = '';
+    }
+
+    for (let i = 0; i < elements.length; i++) {
+      (function (element) {
+        const name = element.getAttribute('name');
+
+        element.value = localStorage.getItem(name) || element.value;
+
+        element.addEventListener('keyup', () => {
+          localStorage.setItem(name, element.value);
+        });
+      })(elements[i]);
+    }
+  }
   // ---------------------------------
 
   iosVhFix();
