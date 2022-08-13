@@ -7,10 +7,14 @@
 
 .ask__container {
   @include container;
-  background-image: url("../img/paper_airplane.png");
+  background-image: url("/img/airplane@1x.png");
   background-repeat: no-repeat;
   background-position: 0% 44%;
   background-size: 42%;
+
+  @include retina {
+    background-image: url("/img/airplane@2x.png");
+  }
 
   @media (max-width: 1240px) {
     background-position: 3% 44%;
