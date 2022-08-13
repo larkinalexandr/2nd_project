@@ -1,0 +1,159 @@
+.ask {
+  background-color: #00b2ff;
+}
+
+.ask__container {
+  @include container;
+}
+
+.ask__form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+
+  h2 {
+    margin: 162px 0 12px 14px;
+    font-family: $roboto-condensed-font;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 51px;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 0 20px 36px;
+    font-family: $pt-mono-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+  }
+
+  form {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 30px;
+    row-gap: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+    margin: 0 0 40px;
+  }
+
+  input,
+  textarea {
+    background: rgba(4, 20, 39, 0.15);
+    border: none;
+    color: #ffffff;
+    padding-left: 15px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: #ffffff;
+      opacity: 1;
+    }
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px #8505af;
+    }
+
+    &:focus {
+      background: rgba(4, 20, 39, 0.4);
+      outline: none;
+    }
+  }
+
+  input {
+    min-height: 50px;
+  }
+
+  textarea {
+    grid-column: span 2;
+    min-height: 155px;
+    padding-top: 25px;
+  }
+
+  button {
+    min-height: 45px;
+    height: min-content;
+    margin-top: 15px;
+    font-family: $roboto-condensed-font;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background-color: #041827;
+    border: none;
+    margin-right: 10px;
+    color: #ffffff;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-default-white;
+      color: $color-default-black;
+    }
+
+    &:active {
+      background-color: #057daf;
+      color: #ffffff;
+    }
+  }
+}
+
+.ask__agree-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    padding-top: 28px;
+    padding-left: 35px;
+    font-family: $pt-mono-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    opacity: 0.8;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  input {
+    left: 18px;
+  }
+
+
+  span {
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    top: 36px;
+    left: 10px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 2px;
+      display: none;
+      width: 7px;
+      height: 4px;
+      background-image: url("../img/svg/check.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.ask__agree-wrapper input:checked + span::before {
+  display: block;
+}

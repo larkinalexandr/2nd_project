@@ -165,24 +165,26 @@
     </section>
     <section class="ask" id="ask">
       <div class="ask__container">
-        <h2>Остались вопросы? Задайте их нам!</h2>
-        <span>Мы проконсультируем Вас бесплатно</span>
-        <form action="https://echo.htmlacademy.ru">
-          <label class="visually-hidden" for="name"></label>
-          <input type="text" name="name" id="name" placeholder="Имя">
-          <label class="visually-hidden" for="phone"></label>
-          <input class="tel" type="tel" name="phone" id="phone" placeholder="Телефон">
-          <label class="visually-hidden" for="phone2"></label>
-          <input class="tel" type="tel" name="phone" id="phone2" placeholder="Телефон">
-          <label class="visually-hidden" for="question"></label>
-          <textarea name="question" id="question" placeholder="Ваш вопрос" required></textarea>
-          <div class="ask__agree-wrapper">
-            <label for="agree">Я согласен на обработку персональных данных</label>
-            <input type="checkbox" id="agree">
-            <span></span>
-          </div>
-          <button type="submit">Задать вопрос</button>
-        </form>
+        <div class="ask__form">
+          <h2>Остались вопросы? Задайте их нам!</h2>
+          <p>Мы проконсультируем Вас бесплатно</p>
+          <form action="https://echo.htmlacademy.ru">
+            <label class="visually-hidden" for="name"></label>
+            <input type="text" name="name" id="name" placeholder="Имя">
+            <label class="visually-hidden" for="phone"></label>
+            <input class="tel" type="tel" name="phone" id="phone" placeholder="Телефон">
+            <!--          <label class="visually-hidden" for="phone2"></label>-->
+            <!--          <input class="tel" type="tel" name="phone2" id="phone2" placeholder="Телефон">-->
+            <label class="visually-hidden" for="question"></label>
+            <textarea name="question" id="question" placeholder="Ваш вопрос" required></textarea>
+            <button type="submit">Задать вопрос</button>
+            <div class="ask__agree-wrapper">
+              <label for="agree">Я согласен на обработку персональных данных</label>
+              <input class="visually-hidden" type="checkbox" id="agree" required>
+              <span></span>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
