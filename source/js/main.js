@@ -14,9 +14,15 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const openAccordion = (element) => {
-    element.classList.remove('is-closed');
-    element.classList.add('is-opened');
+  const openAccordion = (evt) => {
+    if (evt.target.parentNode.classList.contains('is-closed')) {
+      closeAll();
+      evt.target.parentNode.classList.remove('is-closed');
+      evt.target.parentNode.classList.add('is-opened');
+
+    } else {
+      closeAll();
+    }
   };
 
   if (footerAccordion.length > 0) {
@@ -24,19 +30,19 @@ window.addEventListener('DOMContentLoaded', () => {
       footerAccordion[i].classList.remove('no-js');
       footerAccordion[i].classList.add('is-closed');
       footerAccordion[i].addEventListener('click', (evt) => {
-
         if (evt.target.tagName === 'H3') {
-          if (evt.target.parentNode.classList.contains('is-closed')) {
-            closeAll();
-            openAccordion(evt.target.parentNode);
+          openAccordion(evt);
+        }
+      });
 
-          } else {
-            closeAll();
-          }
+      footerAccordion[i].addEventListener('keydown', (evt) => {
+        if (evt.key === 'Enter') {
+          openAccordion(evt);
         }
       });
     }
   }
+
   // ---------------------------------
 
   // about - readmore button
