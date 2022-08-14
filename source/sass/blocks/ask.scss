@@ -1,0 +1,287 @@
+.ask {
+  background-color: #00b2ff;
+  background-image: linear-gradient(to top left, #00b2ff 50%, rgba(4, 24, 39, 0.5) 50%);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+
+  @include vp-1023 {
+    background-image: none;
+  }
+}
+
+.ask__container {
+  @include container;
+  background-image: url("/img/airplane@1x.png");
+  background-repeat: no-repeat;
+  background-position: 0% 44%;
+  background-size: 42%;
+
+  @include retina {
+    background-image: url("/img/airplane@2x.png");
+  }
+
+  @media (max-width: 1240px) {
+    background-position: 3% 44%;
+  }
+
+  @include vp-1023 {
+    background-image: none;
+  }
+}
+
+.ask__form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+
+  h2 {
+    margin: 162px 0 12px 14px;
+    font-family: $roboto-condensed-font;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 51px;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 0 20px 36px;
+    font-family: $pt-mono-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 30px;
+    row-gap: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 250px;
+  }
+
+  input,
+  textarea {
+    background: rgba(4, 20, 39, 0.15);
+    border: none;
+    color: #ffffff;
+    padding-left: 15px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: #ffffff;
+      opacity: 1;
+    }
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px #8505af;
+    }
+
+    &:focus {
+      background: rgba(4, 20, 39, 0.4);
+      outline: none;
+    }
+  }
+
+  input {
+    min-height: 50px;
+  }
+
+  textarea {
+    grid-column: span 2;
+    min-height: 155px;
+    padding-top: 25px;
+  }
+
+  button {
+    min-height: 45px;
+    height: min-content;
+    padding-top: 4px;
+    margin-top: 15px;
+    font-family: $roboto-condensed-font;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background-color: #041827;
+    border: none;
+    border-radius: 3px;
+    margin-right: 10px;
+    color: #ffffff;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-default-white;
+      color: $color-default-black;
+    }
+
+    &:active {
+      background-color: #057daf;
+      color: #ffffff;
+    }
+  }
+
+  @include vp-1023 {
+    padding: 46px 50px 125px;
+    width: 100%;
+
+    h2 {
+      margin: 0 0 6px;
+    }
+
+    p {
+      margin: 0 0 25px;
+    }
+
+    form {
+      padding: 0;
+    }
+
+    textarea {
+      padding-top: 32px;
+    }
+
+    button {
+      margin-right: 55px;
+      padding-top: 6px;
+    }
+  }
+
+  @include vp-767 {
+    padding: 47px 25px 89px;
+
+    h2 {
+      font-size: 30px;
+      line-height: 42px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 35px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    input {
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      padding-top: 25px;
+      margin-bottom: 15px;
+      min-height: 180px;
+    }
+
+    button {
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.ask__agree-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    padding-top: 28px;
+    padding-left: 35px;
+    font-family: $pt-mono-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    opacity: 0.8;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  input {
+    left: 18px;
+  }
+
+
+  span {
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    top: 36px;
+    left: 10px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 2px;
+      display: none;
+      width: 7px;
+      height: 4px;
+      background-image: url("../img/svg/check.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include vp-1023 {
+    label {
+      padding-top: 25px;
+      padding-left: 25px;
+      padding-right: 65px;
+    }
+
+    input {
+      left: 8px;
+    }
+
+    span {
+      top: 32px;
+      left: 0;
+    }
+  }
+
+  @include vp-767 {
+    label {
+      padding: 0;
+      margin: 0 0 0 30px;
+    }
+
+    input {
+      top: -30px;
+      left: 13px;
+    }
+
+    span {
+      top: 50%;
+      left: 5px;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+.ask__agree-wrapper input:hover + span,
+.ask__agree-wrapper input:focus-visible + span {
+  border-color: #8505af;
+  color: #8505af;
+}
+
+.ask__agree-wrapper input:checked + span::before {
+  display: block;
+}
+

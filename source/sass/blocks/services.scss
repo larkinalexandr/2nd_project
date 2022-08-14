@@ -130,6 +130,7 @@
 
   @include vp-1023 {
     padding-top: 0;
+    padding-bottom: 0;
 
     h2 {
       margin-bottom: 37px;
@@ -167,7 +168,7 @@
   }
 
   @include vp-767 {
-    padding: 47px 25px 50px;
+    padding: 47px 25px 86px;
 
     h2 {
       font-size: 28px;

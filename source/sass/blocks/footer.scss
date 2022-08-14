@@ -37,6 +37,11 @@
 
   @include vp-767 {
     padding: 35px 0 0;
+
+    address {
+      font-size: 14px;
+      line-height: 19px;
+    }
   }
 }
 
@@ -217,6 +222,21 @@
       padding-right: 80px;
     }
   }
+
+  @include vp-767 {
+    li {
+      padding-left: 25px;
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+
+    a {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
 }
 
 .footer__accordion {
@@ -347,6 +367,29 @@
     ul {
       display: flex;
       flex-direction: column;
+    }
+  }
+
+  @include vp-767 {
+    li {
+      padding-left: 25px;
+
+      :first-child {
+        margin-bottom: 10px;
+      }
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+
+    address {
+      margin-top: -5px;
+    }
+
+    a {
+      font-size: 14px;
+      line-height: 25px;
     }
   }
 }
