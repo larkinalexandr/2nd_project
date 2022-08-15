@@ -11,13 +11,15 @@
 
 .ask__container {
   @include container;
-  background-image: url("/img/airplane@1x.png");
+  background-image: url("../img/airplane@1x.png");
   background-repeat: no-repeat;
   background-position: 0% 44%;
   background-size: 42%;
 
-  @include retina {
-    background-image: url("/img/airplane@2x.png");
+  @media (min-width: 1024px) {
+    @include retina {
+      background-image: url("../img/airplane@2x.png");
+    }
   }
 
   @media (max-width: 1240px) {
@@ -211,6 +213,7 @@
 
   input {
     left: 18px;
+    top: 3px;
   }
 
 
@@ -284,4 +287,3 @@
 .ask__agree-wrapper input:checked + span::before {
   display: block;
 }
-
