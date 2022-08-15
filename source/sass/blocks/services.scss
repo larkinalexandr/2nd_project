@@ -67,13 +67,12 @@
       background-position: -188px -118px;
     }
 
-    &:nth-child(2),
+    &:not(:first-child),
     :nth-child(6n) {
       background-position: -534px -123px;
     }
 
-    &:nth-child(3),
-    :nth-child(4n) {
+    &:nth-child(3n) {
       background-position: 600px -112px;
     }
   }
@@ -153,13 +152,12 @@
         background-position: 1250px 268px;
       }
 
-      &:nth-child(2),
+      &:not(:first-child),
       :nth-child(6n) {
         background-position: 76% 55%;
       }
 
-      &:nth-child(3),
-      :nth-child(4n) {
+      &:nth-child(3n) {
         background-position: -148px -359px;
       }
     }
@@ -186,13 +184,12 @@
         background-position: 31% 53%;
       }
 
-      &:nth-child(2),
+      &:not(:first-child),
       :nth-child(6n) {
         background-position: 30% 94%;
       }
 
-      &:nth-child(3),
-      :nth-child(4n) {
+      &:nth-child(3n) {
         background-position: 72% 69%;
       }
     }
