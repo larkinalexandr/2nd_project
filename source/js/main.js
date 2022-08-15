@@ -88,6 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
     input.addEventListener('blur', () => {
       if (input.value.length < 5) {
         input.value = '';
+        window.localStorage.phone = '';
       }
     });
 
@@ -122,9 +123,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // Utils
   if (window.localStorage) {
     const elements = document.querySelectorAll('[name]');
-    if (window.localStorage.phone.length < 5) {
-      window.localStorage.phone = '';
-    }
 
     for (let i = 0; i < elements.length; i++) {
       (function (element) {
@@ -147,12 +145,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
-
+  window.addEventListener('load', () => {
+    initModals();
+  });
 });
 
-window.addEventListener('load', () => {
-  initModals();
-});
 // ---------------------------------
 
 // ❗❗❗ обязательно установите плагины eslint, stylelint, editorconfig в редактор кода.
