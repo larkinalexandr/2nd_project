@@ -11,6 +11,10 @@
 }
 
 .services__title {
+  @media (min-width: 1024px) and (max-width: 1240px) {
+    padding-left: 20px;
+  }
+
   &--mobile {
     display: none;
   }
