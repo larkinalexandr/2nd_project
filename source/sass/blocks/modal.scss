@@ -219,3 +219,10 @@
     }
   }
 }
+
+.no-js.modal {
+  visibility: visible;
+  top: 100px;
+  bottom: 280px;
+  pointer-events: auto;
+}
