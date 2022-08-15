@@ -2616,11 +2616,7 @@ button,
   }
 
   .footer__accordion.is-opened ul {
-    max-height: 1000px;
-    -webkit-transition: max-height 0.3s;
-    -o-transition: max-height 0.3s;
-    transition: max-height 0.3s;
-    overflow: hidden;
+    height: auto;
   }
 
   .footer__accordion.is-closed h3::after {
@@ -2628,10 +2624,7 @@ button,
   }
 
   .footer__accordion.is-closed ul {
-    -webkit-transition: max-height 0.3s;
-    -o-transition: max-height 0.3s;
-    transition: max-height 0.3s;
-    max-height: 0;
+    height: 0;
     overflow: hidden;
   }
 
