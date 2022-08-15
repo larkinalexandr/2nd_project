@@ -148,6 +148,16 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    fill: #ffffff;
+
+    &:hover,
+    &:focus-visible {
+      fill: #041827;
+    }
+
+    &:active {
+      fill: #057daf;
+    }
   }
 
   &--preload {
