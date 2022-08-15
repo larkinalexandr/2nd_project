@@ -5,25 +5,104 @@
   bottom: 0;
   left: 0;
   z-index: 1000;
-
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-
   background-color: rgba($color-default-black, 0.8);
-  transform: scale(1.2);
   visibility: hidden;
-  opacity: 0;
-
-  transition: opacity $trans-modal,
-    transform $trans-modal,
-    visibility $trans-modal;
-
   pointer-events: none;
-
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  h2 {
+    margin: 0;
+    font-family: $roboto-condensed-font;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 42px;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 0 0 40px;
+    padding-right: 25px;
+    font-family: $pt-mono-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,
+  textarea {
+    background: rgba(4, 20, 39, 0.15);
+    border: none;
+    color: #ffffff;
+    padding-left: 15px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: #ffffff;
+      opacity: 1;
+    }
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px #8505af;
+    }
+
+    &:focus {
+      background: rgba(4, 20, 39, 0.4);
+      outline: none;
+    }
+  }
+
+  input {
+    min-height: 50px;
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    grid-column: span 2;
+    min-height: 155px;
+    padding-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  button[type="submit"] {
+    min-height: 45px;
+    height: min-content;
+    padding-top: 4px;
+    margin-bottom: 20px;
+    font-family: $roboto-condensed-font;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background-color: #041827;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-default-white;
+      color: $color-default-black;
+    }
+
+    &:active {
+      background-color: #057daf;
+      color: #ffffff;
+    }
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -38,71 +117,37 @@
     align-items: center;
     width: 100%;
     min-height: 100%;
-    padding: 60px 40px;
-
-    @include vp-767 {
-      padding: 60px 16px;
-    }
   }
 
   &__overlay {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     cursor: pointer;
   }
 
   &__content {
     position: relative;
-
-    width: 600px;
-    padding: 40px;
-
-    background-color: $color-default-white;
-
-    @include vp-767 {
-      width: 100%;
-      padding: 20px;
-    }
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px 45px;
+    background-color: #00b3ff;
+    width: 500px;
   }
 
   &__close-btn {
     position: absolute;
-    top: 22px;
-    right: 22px;
+    top: 17px;
+    right: 15px;
     z-index: 1;
-
     width: 40px;
     height: 40px;
     padding: 0;
-
-    background: $color-transparent;
+    background: transparent;
     border: none;
     cursor: pointer;
-  }
-
-  &--responsive {
-    .modal__content {
-      width: 100%;
-    }
-  }
-
-  &--fit-content {
-    .modal__content {
-      width: auto;
-
-      @include vp-767 {
-        width: 100%;
-      }
-    }
-  }
-
-  &--no-scale {
-    transform: none;
   }
 
   &--preload {
@@ -113,7 +158,64 @@
     transform: scale(1);
     visibility: visible;
     opacity: 1;
-
     pointer-events: auto;
+  }
+}
+
+.modal__agree-wrapper input:hover + span,
+.modal__agree-wrapper input:focus-visible + span {
+  border-color: #8505af;
+  color: #8505af;
+}
+
+.modal__agree-wrapper input:checked + span::before {
+  display: block;
+}
+
+.modal__agree-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    position: relative;
+    margin-left: 35px;
+    font-family: $pt-mono-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    opacity: 0.8;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  input {
+    left: -17px;
+    top: -30px;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    left: -25px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 2px;
+      display: none;
+      width: 7px;
+      height: 4px;
+      background-image: url("../img/svg/check.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 }
