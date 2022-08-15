@@ -20,14 +20,14 @@
           <img src="img/svg/logo-mobile.svg" width="35" height="35" alt="Логотип компании.">
         </picture>
       </div>
-      <div class="header__contacts-wrapper">
+      <div class="header__contacts-wrapper"><span class="visually-hidden">E-mail.</span>
         <a class="header__email" href="mailto:info@sd.ru">
           <svg class="header__email-icon" width="20" height="20">
             <use xlink:href="img/sprite_auto.svg#email-icon"></use>
           </svg>
           <span>info@sd.ru</span>
         </a>
-        <a class="header__phone" href="tel:+74950005252">
+        <a class="header__phone" href="tel:+74950005252"><span class="visually-hidden">Телефон.</span>
           <svg class="header__phone-icon" width="20" height="20">
             <use xlink:href="img/sprite_auto.svg#phone-icon"></use>
           </svg>
@@ -139,13 +139,11 @@
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
           <form action="https://echo.htmlacademy.ru">
-            <label class="visually-hidden" for="name"></label>
+            <label class="visually-hidden" for="name">Имя.</label>
             <input type="text" name="name" id="name" placeholder="Имя">
-            <label class="visually-hidden" for="phone"></label>
+            <label class="visually-hidden" for="phone">Телефон.</label>
             <input class="tel" type="tel" name="phone" id="phone" placeholder="Телефон">
-            <!--          <label class="visually-hidden" for="phone2"></label>-->
-            <!--          <input class="tel" type="tel" name="phone2" id="phone2" placeholder="Телефон">-->
-            <label class="visually-hidden" for="question"></label>
+            <label class="visually-hidden" for="question">Вопрос.</label>
             <textarea name="question" id="question" placeholder="Ваш вопрос" required></textarea>
             <button type="submit">Задать вопрос</button>
             <div class="ask__agree-wrapper">
@@ -167,21 +165,21 @@
         <div class="footer__socials">
           <ul>
             <li>
-              <a href="#">
+              <a href="#"><span class="visually-hidden">Пинтерест.</span>
                 <svg width="30" height="30">
                   <use xlink:href="img/sprite_auto.svg#pinterest-icon"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#"><span class="visually-hidden">Одноклассники.</span>
                 <svg width="30" height="30">
                   <use xlink:href="img/sprite_auto.svg#ok-icon"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#"><span class="visually-hidden">Вконтакте.</span>
                 <svg width="30" height="30">
                   <use xlink:href="img/sprite_auto.svg#vk-icon"></use>
                 </svg>
@@ -250,11 +248,11 @@
         </svg>
       </button>
       <form action="https://echo.htmlacademy.ru" method="post">
-        <label class="visually-hidden" for="name-modal"></label>
+        <label class="visually-hidden" for="name-modal">Имя.</label>
         <input type="text" name="name" id="name-modal" placeholder="Имя">
-        <label class="visually-hidden" for="phone-modal"></label>
+        <label class="visually-hidden" for="phone-modal">Телефон.</label>
         <input class="tel" type="tel" name="phone" id="phone-modal" placeholder="Телефон">
-        <label class="visually-hidden" for="question-modal"></label>
+        <label class="visually-hidden" for="question-modal">Вопрос.</label>
         <textarea name="question" id="question-modal" placeholder="Ваш вопрос" required></textarea>
         <button type="submit">Отправить</button>
         <div class="modal__agree-wrapper">
