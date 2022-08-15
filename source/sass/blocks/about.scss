@@ -36,12 +36,12 @@
   background-clip: text;
   color: $color-transparent;
   background-position: -180px -37px;
-  background-image: url("/img/year-bg@1x.jpg");
+  background-image: url("../img/year-bg@1x.jpg");
   background-color: #00b35d;
 
   @include retina {
     background-size: 391%;
-    background-image: url("/img/year-bg@2x.jpg");
+    background-image: url("../img/year-bg@2x.jpg");
 
     @media (min-width: 1024px) {
       background-position: -180px -35px;
@@ -153,4 +153,3 @@
     }
   }
 }
-
