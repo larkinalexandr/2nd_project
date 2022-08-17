@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Accordion footer mobile
   const footerAccordion = document.querySelectorAll('.footer__accordion');
+  const footer = document.querySelector('footer');
   const closeAll = () => {
     for (let i = 0; i < footerAccordion.length; i++) {
       footerAccordion[i].classList.remove('is-opened');
@@ -19,6 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
       closeAll();
       evt.target.parentNode.classList.remove('is-closed');
       evt.target.parentNode.classList.add('is-opened');
+      footer.scrollIntoView(top);
 
     } else {
       closeAll();
