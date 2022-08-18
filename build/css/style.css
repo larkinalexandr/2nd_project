@@ -625,6 +625,10 @@ button,
   transition: none !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -1144,6 +1148,7 @@ button,
   color: #f2f5f7;
   letter-spacing: 0.05em;
   background-color: #00b2ff;
+  border-radius: 3px;
   text-transform: uppercase;
 }
 
@@ -1537,6 +1542,7 @@ button,
 .ask__form textarea {
   background: rgba(4, 20, 39, 0.15);
   border: none;
+  border-radius: 3px;
   color: #ffffff;
   padding-left: 15px;
   -webkit-box-sizing: border-box;
@@ -1698,6 +1704,12 @@ button,
 
 .ask__agree-wrapper input:checked + span::before {
   display: block;
+}
+
+input.is-invalid,
+input.is-invalid:hover,
+input.is-invalid:focus {
+  background-color: rgba(255, 0, 0, 0.65);
 }
 
 .footer {
@@ -2072,7 +2084,8 @@ button,
   }
 
   .advantages__container h3 {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    line-height: 30px;
   }
 
   .advantages__icon--detective {
@@ -2342,7 +2355,8 @@ button,
 
   .advantages__container h3 {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 32px;
+    margin-bottom: 60px;
   }
 
   .advantages__container p {
@@ -2522,6 +2536,7 @@ button,
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 0;
+    margin-bottom: 35px;
   }
 
   .footer__logo-socials-wrapper {
