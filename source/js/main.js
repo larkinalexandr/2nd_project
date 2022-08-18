@@ -46,7 +46,81 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------
+  //  Phone input mask & form validate
 
+  const form = document.querySelectorAll('form');
+
+  if (form.length > 0) {
+    for (let i = 0; i < form.length; i++) {
+      const input = form[i].querySelector('.tel');
+      const nameField = form[i].querySelector('input[name="name"]');
+      const sendButton = form[i].querySelector('button');
+      const MAX_NUMBER_LENGTH = 11;
+      const MIN_INPUT_LENGTH = 18;
+      const prefixNumber = () => '+7 (';
+
+      input.addEventListener('focus', () => {
+        if (input.value.length < 4) {
+          input.value = prefixNumber();
+        }
+      });
+
+      input.addEventListener('blur', () => {
+        if (input.value.length < 5) {
+          input.value = '';
+          window.localStorage.phone = '';
+        }
+      });
+
+      nameField.addEventListener('input', () => {
+        if (nameField.value.length) {
+          nameField.classList.remove('is-invalid');
+        }
+      });
+
+      input.addEventListener('input', () => {
+        const value = input.value.replace(/\D+/g, '');
+
+
+        let number = '';
+
+        for (let k = 0; k < value.length && k < MAX_NUMBER_LENGTH; k++) {
+          switch (k) {
+            case 0:
+              number += prefixNumber();
+              continue;
+            case 4:
+              number += ') ';
+              break;
+            case 7:
+              number += ' ';
+              break;
+            case 9:
+              number += ' ';
+              break;
+            default:
+              break;
+          }
+          number += value[i];
+        }
+        input.value = number;
+        if (input.value.length === MIN_INPUT_LENGTH) {
+          input.classList.remove('is-invalid');
+        }
+      });
+      sendButton.addEventListener('click', (evt) => {
+        if (input.value.length < MIN_INPUT_LENGTH) {
+          evt.preventDefault();
+          input.classList.add('is-invalid');
+        }
+
+        if (!nameField.value.length) {
+          nameField.classList.add('is-invalid');
+        }
+      });
+    }
+  }
+  // ---------------------------------
   // about - readmore button
 
   const aboutTextWrapper = document.querySelector('.about__text-wrapper');
@@ -63,7 +137,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (aboutTextWrapper.classList.contains('is-closed')) {
         aboutTextWrapper.classList.remove('is-closed');
         aboutTextWrapper.classList.add('is-opened');
-        button.textContent = 'Скрыть';
+        button.textContent = 'Свернуть';
       } else {
         aboutTextWrapper.classList.remove('is-opened');
         aboutTextWrapper.classList.add('is-closed');
@@ -74,54 +148,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
 
-  //  Phone input mask
-
-  [].forEach.call(document.querySelectorAll('.tel'), function (input) {
-
-    const MAX_NUMBER_LENGTH = 11;
-    const prefixNumber = () => '+7 (';
-
-    input.addEventListener('focus', () => {
-      if (input.value.length < 4) {
-        input.value = prefixNumber();
-      }
-    });
-
-    input.addEventListener('blur', () => {
-      if (input.value.length < 5) {
-        input.value = '';
-        window.localStorage.phone = '';
-      }
-    });
-
-    input.addEventListener('input', () => {
-      const value = input.value.replace(/\D+/g, '');
-
-      let number = '';
-
-      for (let i = 0; i < value.length && i < MAX_NUMBER_LENGTH; i++) {
-        switch (i) {
-          case 0:
-            number += prefixNumber();
-            continue;
-          case 4:
-            number += ') ';
-            break;
-          case 7:
-            number += ' ';
-            break;
-          case 9:
-            number += ' ';
-            break;
-          default:
-            break;
-        }
-        number += value[i];
-      }
-      input.value = number;
-    });
-  });
-  // ---------------------------------
   // Utils
   if (window.localStorage) {
     const elements = document.querySelectorAll('[name]');
