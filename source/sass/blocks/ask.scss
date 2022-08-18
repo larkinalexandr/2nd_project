@@ -70,6 +70,7 @@
   textarea {
     background: rgba(4, 20, 39, 0.15);
     border: none;
+    border-radius: 3px;
     color: #ffffff;
     padding-left: 15px;
     box-sizing: border-box;
@@ -286,4 +287,10 @@
 
 .ask__agree-wrapper input:checked + span::before {
   display: block;
+}
+
+input.is-invalid,
+input.is-invalid:hover,
+input.is-invalid:focus {
+  background-color: rgba(255, 0, 0, 0.65);
 }
