@@ -15,11 +15,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const openAccordion = (evt) => {
-    if (evt.target.parentNode.classList.contains('is-closed')) {
+  const openAccordion = (accordion) => {
+    if (accordion.classList.contains('is-closed')) {
       closeAll();
-      evt.target.parentNode.classList.remove('is-closed');
-      evt.target.parentNode.classList.add('is-opened');
+      accordion.classList.remove('is-closed');
+      accordion.classList.add('is-opened');
       footer.scrollIntoView(top);
 
     } else {
@@ -32,14 +32,9 @@ window.addEventListener('DOMContentLoaded', () => {
       footerAccordion[i].classList.remove('no-js');
       footerAccordion[i].classList.add('is-closed');
       footerAccordion[i].addEventListener('click', (evt) => {
-        if (evt.target.tagName === 'H3') {
-          openAccordion(evt);
-        }
-      });
 
-      footerAccordion[i].addEventListener('keydown', (evt) => {
-        if (evt.key === 'Enter') {
-          openAccordion(evt);
+        if (evt.target.tagName === 'BUTTON') {
+          openAccordion(footerAccordion[i]);
         }
       });
     }
