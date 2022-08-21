@@ -28,6 +28,11 @@
   justify-content: space-between;
   align-items: center;
 
+  @media (min-width: 1024px) and (max-width: 1240px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   @include vp-1023 {
     padding-right: 0;
     align-items: flex-start;
@@ -36,10 +41,6 @@
 
 .header__logo {
   flex-shrink: 0;
-
-  @media (min-width: 1024px) and (max-width: 1240px) {
-    margin-left: 20px;
-  }
 
   img {
     width: 215px;

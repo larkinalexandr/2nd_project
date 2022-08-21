@@ -37,6 +37,11 @@
   padding-top: 66px;
   padding-bottom: 140px;
 
+  @media (min-width: 1024px) and (max-width: 1240px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   h2 {
     margin: 0 0 55px;
     font-family: $roboto-condensed-font;

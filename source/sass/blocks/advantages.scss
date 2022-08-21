@@ -2,6 +2,11 @@
   @include container;
   padding: 120px 0 50px;
 
+  @media (min-width: 1024px) and (max-width: 1240px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr;

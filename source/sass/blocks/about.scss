@@ -7,6 +7,11 @@
   padding-bottom: 100px;
   padding-left: 16px;
 
+  @media (min-width: 1024px) and (max-width: 1240px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   @include vp-1023 {
     padding: 36px 50px 60px 63px;
     column-gap: 12px;

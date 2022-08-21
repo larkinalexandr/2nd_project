@@ -51,6 +51,11 @@
   display: flex;
   justify-content: space-between;
 
+  @media (min-width: 1024px) and (max-width: 1240px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   @include vp-1023 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -67,9 +72,6 @@
 }
 
 .footer__logo-socials-wrapper {
-  @media (min-width: 1024px) and (max-width: 1240px) {
-    margin-left: 20px;
-  }
 
   @include vp-1023 {
     display: flex;
