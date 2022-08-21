@@ -40,6 +40,7 @@
 }
 
 .header__logo {
+  margin-right: 21px;
   flex-shrink: 0;
 
   img {
@@ -58,8 +59,11 @@
 }
 
 .header__contacts-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-width: 480px;
+  column-gap: 22px;
+  row-gap: 5px;
 
   a {
     margin-bottom: 5px;
@@ -69,7 +73,6 @@
     line-height: 18px;
     color: #f2f5f7;
     cursor: pointer;
-    margin-right: 120px;
     transition: transform 0.2s;
     fill: #00b2ff;
 
@@ -96,6 +99,11 @@
   }
 
   @include vp-1023 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    min-width: auto;
+
     a {
       display: flex;
       justify-content: center;
