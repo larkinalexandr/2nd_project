@@ -4,10 +4,8 @@
   background-size: cover;
   min-height: 880px;
 
-  @media (min-width: 1024px) {
-    @include retina {
-      background-image: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/intro-bg-d@2x.jpg");
-    }
+  @include retina {
+    background-image: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/intro-bg-d@2x.jpg");
   }
 
   @include vp-1023 {
