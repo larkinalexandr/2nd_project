@@ -23,7 +23,8 @@
   }
 
   @media (max-width: 1240px) {
-    background-position: 3% 44%;
+    background-position: 1% 44%;
+    background-size: 41%;
   }
 
   @include vp-1023 {
@@ -32,7 +33,7 @@
 }
 
 .ask__form {
-  width: 50%;
+  width: 610px;
   display: flex;
   flex-direction: column;
   margin-left: auto;
