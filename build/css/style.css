@@ -1733,7 +1733,7 @@ input.is-invalid:focus {
 .footer {
   min-height: 280px;
   background-color: #041827;
-  padding: 50px 0 50px;
+  padding: 50px 0 43px;
 }
 
 .footer h3,
@@ -1842,36 +1842,31 @@ input.is-invalid:focus {
 }
 
 .footer__nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-left: auto;
   margin-right: 30px;
+}
+
+.footer__nav h3 {
+  -ms-grid-column-span: 2;
+  grid-column: span 2;
 }
 
 .footer__nav ul {
   margin: 0;
   padding: 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (auto)[4];
-  grid-template-rows: repeat(4, auto);
-  grid-auto-flow: column;
-  width: 470px;
-  -webkit-column-gap: 30px;
-  -moz-column-gap: 30px;
-  column-gap: 30px;
-  row-gap: 9px;
+  width: 235px;
+}
+
+.footer__nav ul:last-child {
+  padding-left: 15px;
 }
 
 .footer__nav li {
-  margin: 0;
+  margin: 0 0 9px;
   padding: 0;
   list-style-type: none;
   display: -webkit-box;
@@ -2252,7 +2247,7 @@ input.is-invalid:focus {
   .footer {
     padding-left: 50px;
     padding-right: 45px;
-    padding-bottom: 62px;
+    padding-bottom: 39px;
   }
 
   .footer h3 {
@@ -2292,6 +2287,13 @@ input.is-invalid:focus {
   }
 
   .footer__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     margin: 0;
   }
 
@@ -2305,6 +2307,10 @@ input.is-invalid:focus {
     flex-direction: column;
     width: auto;
     padding-right: 80px;
+  }
+
+  .footer__nav ul:last-child {
+    padding-left: 0;
   }
 
   .footer__office {
@@ -2615,12 +2621,12 @@ input.is-invalid:focus {
     margin-bottom: 24px;
   }
 
-  .footer__nav li {
-    padding-left: 25px;
+  .footer__nav ul:last-child {
+    padding-bottom: 6px;
   }
 
-  .footer__nav li:last-child {
-    margin-bottom: 20px;
+  .footer__nav li {
+    padding-left: 25px;
   }
 
   .footer__nav a {
@@ -2660,7 +2666,7 @@ input.is-invalid:focus {
     background-color: #f8fdff;
   }
 
-  .footer__accordion ul {
+  .footer__accordion ul:last-child {
     border-bottom: 1px solid rgba(248, 253, 255, 0.7);
   }
 
