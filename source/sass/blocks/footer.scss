@@ -1,7 +1,7 @@
 .footer {
   min-height: 280px;
   background-color: #041827;
-  padding: 50px 0 50px;
+  padding: 50px 0 43px;
 
   h3,
   button {
@@ -30,7 +30,7 @@
   @include vp-1023 {
     padding-left: 50px;
     padding-right: 45px;
-    padding-bottom: 62px;
+    padding-bottom: 39px;
 
     h3 {
       margin-top: 0;
@@ -162,25 +162,27 @@
 }
 
 .footer__nav {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-left: auto;
   margin-right: 30px;
+
+  h3 {
+    grid-column: span 2;
+  }
 
   ul {
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, auto);
-    grid-auto-flow: column;
-    width: 470px;
-    column-gap: 30px;
-    row-gap: 9px;
+    width: 235px;
+
+    &:last-child {
+      padding-left: 15px;
+    }
   }
 
   li {
-    margin: 0;
+    margin: 0 0 9px;
     padding: 0;
     list-style-type: none;
 
@@ -222,6 +224,8 @@
   }
 
   @include vp-1023 {
+    display: flex;
+    flex-direction: column;
     margin: 0;
 
     ul {
@@ -229,16 +233,22 @@
       flex-direction: column;
       width: auto;
       padding-right: 80px;
+
+      &:last-child {
+        padding-left: 0;
+      }
     }
   }
 
   @include vp-767 {
+    ul {
+      &:last-child {
+        padding-bottom: 6px;
+      }
+    }
+
     li {
       padding-left: 25px;
-
-      &:last-child {
-        margin-bottom: 20px;
-      }
     }
 
     a {
@@ -281,7 +291,9 @@
     }
 
     ul {
-      border-bottom: 1px solid rgba(248, 253, 255, 0.7);
+      &:last-child {
+        border-bottom: 1px solid rgba(248, 253, 255, 0.7);
+      }
     }
   }
 }
