@@ -146,12 +146,13 @@
             <input class="tel" type="tel" name="phone" id="phone" minlength="48" placeholder="Телефон" pattern="^\+?\(?(\d+-?\s?\(?\)?-?\s?)+\d+$" required>
             <label class="visually-hidden" for="question">Вопрос.</label>
             <textarea name="question" id="question" placeholder="Ваш вопрос"></textarea>
-            <button type="submit">Задать вопрос</button>
             <div class="ask__agree-wrapper">
               <label for="agree">Я согласен на обработку персональных данных
                 <input class="visually-hidden" type="checkbox" id="agree" required checked>
-                <span></span></label>
+                <span></span>
+              </label>
             </div>
+            <button type="submit">Задать вопрос</button>
           </form>
         </div>
       </div>
@@ -190,7 +191,10 @@
         </div>
       </div>
       <div class="footer__nav footer__accordion no-js">
-        <h3 tabindex="0">Разделы сайта</h3>
+        <h3 class="footer__accordion-title footer__accordion-title--desktop">Разделы сайта</h3>
+        <h3 class="footer__accordion-title footer__accordion-title--mobile">
+          <button>Разделы сайта</button>
+        </h3>
         <ul>
           <li>
             <a href="#">О Компаниии</a>
@@ -204,6 +208,8 @@
           <li>
             <a href="#">Монтаж печатных плат</a>
           </li>
+        </ul>
+        <ul>
           <li>
             <a href="#">Комплектующие</a>
           </li>
@@ -216,7 +222,10 @@
         </ul>
       </div>
       <div class="footer__office footer__accordion no-js">
-        <h3 tabindex="0">Наш офис</h3>
+        <h3 class="footer__accordion-title footer__accordion-title--desktop">Наш офис</h3>
+        <h3 class="footer__accordion-title footer__accordion-title--mobile">
+          <button>Наш офис</button>
+        </h3>
         <ul>
           <li>
             <address>г. Мытищи, Олимпийский&nbsp;проспект, д.10</address>
@@ -255,12 +264,13 @@
         <input class="tel" type="tel" name="phone" id="phone-modal" placeholder="Телефон" pattern="^\+?\(?(\d+-?\s?\(?\)?-?\s?)+\d+$" required>
         <label class="visually-hidden" for="question-modal">Вопрос.</label>
         <textarea name="question" id="question-modal" placeholder="Ваш вопрос"></textarea>
-        <button type="submit">Отправить</button>
         <div class="modal__agree-wrapper">
           <label>Я согласен на обработку персональных данных
             <input class="visually-hidden" type="checkbox" required checked>
-            <span></span></label>
+            <span></span>
+          </label>
         </div>
+        <button type="submit">Отправить</button>
       </form>
     </div>
   </div>

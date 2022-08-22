@@ -91,6 +91,7 @@
     color: #ffffff;
     user-select: none;
     cursor: pointer;
+    order: 1;
 
     &:hover,
     &:focus-visible {
@@ -185,6 +186,7 @@
 .modal__agree-wrapper {
   display: flex;
   flex-direction: column;
+  order: 2;
 
   label {
     position: relative;
